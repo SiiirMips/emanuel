@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Manuel Duckbass - Official Website
 
-## Getting Started
+Modern, high-performance website for DJ Manuel Duckbass built with Next.js 15, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## 🚀 Features
+
+- **Modern Design**: Sleek, minimalist design with smooth animations
+- **SEO Optimized**: Comprehensive metadata, Open Graph tags, and structured data
+- **Performance**: Optimized for speed and Core Web Vitals
+- **Responsive**: Mobile-first design that works on all devices
+- **Accessible**: ARIA labels and semantic HTML
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Deployment**: Vercel
+
+## 📦 Installation
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌐 Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Vercel (Recommended)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Push your code to GitHub
+2. Import project in [Vercel](https://vercel.com)
+3. Vercel will auto-detect Next.js and deploy
 
-## Learn More
+### Manual Deployment
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Build the project
+npm run build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# The output will be in the .next folder
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔒 Security
 
-## Deploy on Vercel
+- Security headers configured in `vercel.json`
+- No sensitive data in client-side code
+- All external links use `rel="noopener noreferrer"`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Configuration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Update site information in `lib/config.ts`:
+- Site metadata
+- Contact information
+- Social media links
+- Release information
+
+## 📄 License
+
+© 2026 Manuel Duckbass. All rights reserved.
+
+---
+
+**Developed with ❤️ by Marvin**
