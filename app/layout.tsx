@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_CONFIG.name}`,
   },
   description: SITE_CONFIG.description,
-  keywords: SITE_CONFIG.keywords,
+  keywords: [...SITE_CONFIG.keywords],
   authors: [{ name: SITE_CONFIG.name }],
   creator: SITE_CONFIG.name,
   openGraph: {
