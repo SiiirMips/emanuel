@@ -28,7 +28,7 @@ export function WaveBackground() {
                 </svg>
             </motion.div>
 
-            {/* Wave 2: Line art style - "Techno Wireframe" vibe */}
+            {/* Wave 2: Line art style - "Tech House Wireframe" vibe */}
             <motion.div
                 style={{ y: y2 }}
                 className="absolute bottom-[10%] left-[-100%] w-[400%] md:w-[200%] h-[40vh] opacity-20"

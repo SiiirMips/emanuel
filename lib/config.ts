@@ -4,20 +4,20 @@
  */
 
 export const SITE_CONFIG = {
-    name: "Manuel Duckbass",
-    title: "Manuel Duckbass | Techno DJ & Producer",
-    description: "Offizieller Webauftritt von DJ Manuel Duckbass. Techno neu definiert. Treibe den Beat. Fühle die Nacht.",
+    name: "Manual Duckbass",
+    title: "Manual Duckbass | Tech House DJ & Producer",
+    description: "Offizieller Webauftritt von DJ Manual Duckbass. Tech House neu definiert. Treibe den Beat. Fühle die Nacht.",
     url: "https://manuelduckbass.com",
     locale: "de_DE",
     keywords: [
-        "Manuel Duckbass",
+        "Manual Duckbass",
         "DJ",
-        "Techno",
+        "Tech House",
         "Producer",
         "Electronic Music",
         "Tech House",
         "DJ Germany",
-        "Techno Producer"
+        "Tech House Producer"
     ],
 } as const;
 

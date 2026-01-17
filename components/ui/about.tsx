@@ -38,7 +38,7 @@ export function About() {
                     </h2>
 
                     <p className="text-lg md:text-xl text-neutral-400 leading-relaxed">
-                        Manuel Duckbass isn't just playing tracks; he's orchestrating energy.
+                        Manual Duckbass isn't just playing tracks; he's orchestrating energy.
                         From underground raves to digital soundscapes, his style blends
                         raw techno geometry with melodic fluidity.
                     </p>

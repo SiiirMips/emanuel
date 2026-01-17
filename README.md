@@ -1,6 +1,6 @@
-# Manuel Duckbass - Official Website
+# Manual Duckbass - Official Website
 
-Modern, high-performance website for DJ Manuel Duckbass built with Next.js 15, TypeScript, and Tailwind CSS.
+Modern, high-performance website for DJ Manual Duckbass built with Next.js 15, TypeScript, and Tailwind CSS.
 
 ## 🚀 Features
 
@@ -68,7 +68,7 @@ Update site information in `lib/config.ts`:
 
 ## 📄 License
 
-© 2026 Manuel Duckbass. All rights reserved.
+© 2026 Manual Duckbass. All rights reserved.
 
 ---
 

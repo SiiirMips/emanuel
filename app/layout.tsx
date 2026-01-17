@@ -60,7 +60,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "MusicGroup",
   name: SITE_CONFIG.name,
-  genre: ["Techno", "Electronic Music", "Tech House"],
+  genre: ["Tech House", "Electronic Music"],
   description: SITE_CONFIG.description,
   url: SITE_CONFIG.url,
   sameAs: [

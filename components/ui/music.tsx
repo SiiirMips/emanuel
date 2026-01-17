@@ -5,7 +5,7 @@ import { Play } from "lucide-react";
 
 const TRACKS = [
     { title: "Midnight Protocol", duration: "3:42", label: "DuckRecords" },
-    { title: "System Override", duration: "4:01", label: "TechnoLogic" },
+    { title: "System Override", duration: "4:01", label: "Tech House Logic" },
     { title: "Bass Resonance", duration: "3:20", label: "DeepCut" },
     { title: "Neon Horizon", duration: "5:12", label: "Self Release" },
 ];

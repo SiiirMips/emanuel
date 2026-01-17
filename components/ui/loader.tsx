@@ -37,7 +37,7 @@ export function Loader({ onLoadingComplete }: { onLoadingComplete: () => void })
                 >
                     <Image
                         src="/logo.png"
-                        alt="Manuel Duckbass Logo"
+                        alt="Manual Duckbass Logo"
                         fill
                         className="object-contain invert" // Invert if logo is black on transparent, to make it white
                         priority
