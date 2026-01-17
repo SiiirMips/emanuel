@@ -1,21 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { LightRays } from "./light-rays";
+import Beams from "@/components/Beams";
 import { useRef } from "react";
 
 // Magnetic Button Component for internal use
-function MagneticButton({ children, className, variant = "default" }: { children: React.ReactNode, className?: string, variant?: "default" | "outline" }) {
+function MagneticButton({ children, className, ...props }: { children: React.ReactNode; className?: string;[key: string]: any }) {
     const ref = useRef<HTMLButtonElement>(null);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
 
     const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
-        const { clientX, clientY } = e;
-        const { left, top, width, height } = ref.current?.getBoundingClientRect() ?? { left: 0, top: 0, width: 0, height: 0 };
-        const center = { x: left + width / 2, y: top + height / 2 };
-        x.set(clientX - center.x);
-        y.set(clientY - center.y);
+        if (!ref.current) return;
+        const rect = ref.current.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        x.set((e.clientX - centerX) * 0.15);
+        y.set((e.clientY - centerY) * 0.15);
     };
 
     const handleMouseLeave = () => {
@@ -28,12 +29,12 @@ function MagneticButton({ children, className, variant = "default" }: { children
             ref={ref}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            style={{ x: useTransform(x, (val) => val * 0.2), y: useTransform(y, (val) => val * 0.2) }}
-            className={`relative`}
+            className={className}
+            style={{ x, y }}
+            transition={{ type: "spring", stiffness: 150, damping: 15 }}
+            {...props}
         >
-            <Button size="lg" variant={variant as any} className={className}>
-                {children}
-            </Button>
+            {children}
         </motion.button>
     );
 }
@@ -64,15 +65,7 @@ export function Hero() {
         <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
             {/* Wave Background */}
             <div className="absolute inset-0 z-0" aria-hidden="true">
-                <LightRays
-                    raysColor="#FFFFFF"
-                    raysSpeed={0.4}
-                    lightSpread={0.6}
-                    rayLength={3.0}
-                    pulsating={true}
-                    mouseInfluence={0.3}
-                    className="w-full h-full"
-                />
+                <Beams />
             </div>
 
             {/* Content */}
@@ -125,7 +118,7 @@ export function Hero() {
                     transition={{ duration: 1, delay: 2, type: "spring" }}
                     className="flex flex-col md:flex-row gap-6 pt-8 items-center"
                 >
-                    <MagneticButton className="bg-white text-black hover:bg-neutral-200 text-lg px-10 h-16 uppercase tracking-widest font-heading font-black rounded-full hover:scale-110 transition-transform">
+                    <MagneticButton className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-lg font-black font-heading uppercase tracking-widest bg-white text-black hover:bg-neutral-200 px-10 h-16 hover:scale-110 transition-transform">
                         Neuer Release
                     </MagneticButton>
                 </motion.div>

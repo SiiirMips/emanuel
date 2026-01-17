@@ -87,16 +87,19 @@ export function Discography() {
                                 </button>
                             </>
                         ) : (
-                            <div className="absolute inset-0 bg-black flex flex-col">
-                                <iframe
-                                    width="100%"
-                                    height="100%"
-                                    scrolling="no"
-                                    frameBorder="no"
-                                    allow="autoplay"
-                                    title={`${RELEASES.latest.title} on SoundCloud`}
-                                    src={`https://w.soundcloud.com/player/?url=${encodeURIComponent(RELEASES.latest.soundcloudUrl)}&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true`}
-                                ></iframe>
+                            <div className="absolute inset-0 bg-black flex flex-col rounded-xl overflow-hidden">
+                                <div className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl">
+                                    <iframe
+                                        width="100%"
+                                        height="100%"
+                                        scrolling="no"
+                                        frameBorder="no"
+                                        allow="autoplay"
+                                        title={`${RELEASES.latest.title} on SoundCloud`}
+                                        src={`https://w.soundcloud.com/player/?url=${encodeURIComponent(RELEASES.latest.soundcloudUrl)}&color=%2300d9ff&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true`}
+                                        className="rounded-xl"
+                                    ></iframe>
+                                </div>
                                 <button
                                     onClick={() => setIsPlaying(false)}
                                     aria-label="Pause music"

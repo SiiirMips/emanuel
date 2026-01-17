@@ -118,8 +118,10 @@ export const LightRays = ({
       rendererRef.current = renderer;
 
       const gl = renderer.gl;
+      gl.clearColor(0, 0, 0, 1); // Set clear color to black
       gl.canvas.style.width = '100%';
       gl.canvas.style.height = '100%';
+      gl.canvas.style.backgroundColor = '#000000'; // Ensure black background
 
       while (containerRef.current.firstChild) {
         containerRef.current.removeChild(containerRef.current.firstChild);
@@ -294,6 +296,10 @@ void main() {
         }
 
         try {
+          // Clear the canvas with black before rendering
+          const gl = renderer.gl;
+          gl.clear(gl.COLOR_BUFFER_BIT);
+
           renderer.render({ scene: mesh });
           animationIdRef.current = requestAnimationFrame(loop);
         } catch (error) {
