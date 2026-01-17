@@ -3,6 +3,7 @@ import { ChevronDown } from "lucide-react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import Beams from "@/components/Beams";
 import { useRef } from "react";
+import type { Variants } from "framer-motion";
 
 // Magnetic Button Component for internal use
 function MagneticButton({ children, className, ...props }: { children: React.ReactNode; className?: string;[key: string]: any }) {
@@ -39,7 +40,7 @@ function MagneticButton({ children, className, ...props }: { children: React.Rea
     );
 }
 
-const titleVariants = {
+const titleVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
@@ -50,7 +51,7 @@ const titleVariants = {
     }
 };
 
-const charVariants = {
+const charVariants: Variants = {
     hidden: { opacity: 0, y: 50, rotateX: -90 },
     visible: {
         opacity: 1,
