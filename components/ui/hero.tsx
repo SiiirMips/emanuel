@@ -110,8 +110,8 @@ export function Hero() {
                     transition={{ duration: 1.5, delay: 1.5 }}
                     className="text-lg md:text-2xl text-neutral-300 max-w-2xl mx-auto leading-relaxed font-light tracking-wide"
                 >
-                    TECH HOUSE NEU DEFINIERT.<br />
-                    <span className="text-white/60">TREIBE DEN BEAT. FÜHLE DIE NACHT.</span>
+                    House · Tech House · Techno<br />
+                    <span className="text-white/60">Driving beats. Deep grooves. Long nights.</span>
                 </motion.p>
 
                 <motion.div

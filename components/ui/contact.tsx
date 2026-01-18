@@ -24,7 +24,7 @@ export function Contact() {
                     className="max-w-2xl mx-auto space-y-8"
                 >
                     <p className="text-xl text-neutral-400">
-                        For worldwide bookings, press inquiries, and collaborations.
+                        Available for bookings & collaborations.
                     </p>
 
                     <a

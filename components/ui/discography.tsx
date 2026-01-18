@@ -41,9 +41,9 @@ export function Discography() {
                     className="flex flex-col md:flex-row justify-between items-end border-b border-neutral-800 pb-8"
                 >
                     <h2 className="text-5xl md:text-8xl font-black font-heading uppercase tracking-tighter">
-                        Ausgewählte<br />Werke
+                        RELEASES
                     </h2>
-                    <span className="text-neutral-500 mb-2 font-mono text-sm tracking-widest uppercase">Diskografie 2024-2025</span>
+                    <span className="text-neutral-500 mb-2 font-mono text-sm tracking-widest uppercase">Diskografie</span>
                 </motion.div>
 
                 {/* Bento Grid Layout */}
@@ -57,34 +57,65 @@ export function Discography() {
                     {/* Main Featured Release (Large Card) */}
                     <motion.article
                         variants={item}
-                        className="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-3xl bg-neutral-900 border border-white/10"
-                        whileHover={{ scale: 1.02, boxShadow: "0 20px 50px rgba(0,0,0,0.5)" }}
-                        transition={{ duration: 0.3 }}
+                        className="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-3xl bg-neutral-900 shadow-2xl"
+                        whileHover={{ scale: 1.01 }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
                     >
                         {!isPlaying ? (
                             <>
+                                {/* Background Image */}
                                 <img
                                     src={RELEASES.latest.image}
                                     alt={`${RELEASES.latest.title} - Album Cover`}
-                                    className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500 group-hover:scale-105"
+                                    className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-all duration-700 group-hover:scale-105"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
-                                <div className="absolute bottom-8 left-8 space-y-2">
-                                    <span className="px-3 py-1 bg-white text-black text-xs font-bold uppercase tracking-widest rounded-full">
-                                        {RELEASES.latest.label}
-                                    </span>
-                                    <h3 className="text-4xl md:text-6xl font-black font-heading uppercase">{RELEASES.latest.title}</h3>
+                                {/* Noise Texture Overlay */}
+                                <div className="absolute inset-0 opacity-[0.02] mix-blend-overlay pointer-events-none"
+                                    style={{
+                                        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E")`
+                                    }}
+                                />
+
+                                {/* Gradient Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
+
+                                {/* Subtle Glow on Hover */}
+                                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                    <div className="absolute inset-0 bg-white/5 blur-3xl" />
                                 </div>
 
+                                {/* Content Container */}
+                                <div className="absolute bottom-8 left-8 right-8 space-y-3 z-10">
+                                    {/* Label Badge */}
+                                    <span className="inline-block px-4 py-2 bg-white/95 backdrop-blur-sm text-black text-xs font-bold uppercase tracking-[0.2em] rounded-full shadow-lg">
+                                        {RELEASES.latest.label}
+                                    </span>
+
+                                    {/* Title */}
+                                    <h3 className="text-4xl md:text-7xl font-black font-heading uppercase tracking-tighter leading-none drop-shadow-2xl text-white">
+                                        {RELEASES.latest.title}
+                                    </h3>
+
+                                    {/* Subtitle */}
+                                    <p className="text-neutral-400 text-sm font-mono tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                        Jetzt Anhören →
+                                    </p>
+                                </div>
+
+                                {/* Play Button */}
                                 <button
                                     onClick={() => setIsPlaying(true)}
                                     aria-label={`Play ${RELEASES.latest.title}`}
-                                    className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100"
+                                    className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 z-20"
                                 >
-                                    <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
-                                        <Play className="w-8 h-8 text-black fill-current ml-1" />
-                                    </div>
+                                    <motion.div
+                                        className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl"
+                                        whileHover={{ scale: 1.1 }}
+                                        whileTap={{ scale: 0.95 }}
+                                    >
+                                        <Play className="w-9 h-9 text-black fill-current ml-1" />
+                                    </motion.div>
                                 </button>
                             </>
                         ) : (
@@ -101,13 +132,15 @@ export function Discography() {
                                         className="rounded-xl"
                                     ></iframe>
                                 </div>
-                                <button
+                                <motion.button
                                     onClick={() => setIsPlaying(false)}
                                     aria-label="Pause music"
-                                    className="absolute top-4 right-4 z-50 p-2 bg-black/50 hover:bg-black rounded-full text-white backdrop-blur-md transition-colors"
+                                    className="absolute top-4 right-4 z-50 p-3 bg-black/70 hover:bg-black rounded-full text-white backdrop-blur-md"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
                                 >
                                     <Pause className="w-6 h-6" />
-                                </button>
+                                </motion.button>
                             </div>
                         )}
                     </motion.article>
@@ -117,27 +150,41 @@ export function Discography() {
                         <motion.article
                             key={index}
                             variants={item}
-                            className="relative group overflow-hidden rounded-3xl bg-neutral-900 border border-white/10"
-                            whileHover={{ scale: 1.05, rotate: index % 2 === 0 ? 1 : -1 }}
-                            transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                            className="relative group overflow-hidden rounded-3xl bg-neutral-900 shadow-xl cursor-pointer"
+                            whileHover={{ scale: 1.03 }}
+                            transition={{ duration: 0.4, ease: "easeOut" }}
                         >
-                            <img
-                                src={release.image}
-                                alt={`${release.title} - Coming Soon`}
-                                className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-30 transition-opacity duration-500 group-hover:scale-110"
+                            {/* Noise Texture */}
+                            <div className="absolute inset-0 opacity-[0.02] mix-blend-overlay pointer-events-none"
+                                style={{
+                                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E")`
+                                }}
                             />
-                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
 
-                            {/* "Coming Soon" Overlay */}
+                            {/* Gradient Background */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900" />
+
+                            {/* Rotating Loader */}
                             <div className="absolute inset-0 flex items-center justify-center">
-                                <span className="px-4 py-2 border border-white/30 rounded-full text-sm font-bold uppercase tracking-widest backdrop-blur-md group-hover:bg-white group-hover:text-black transition-all">
-                                    {release.label}
-                                </span>
+                                <motion.div
+                                    className="w-16 h-16 rounded-full border-4 border-white/10 border-t-white/60"
+                                    animate={{ rotate: 360 }}
+                                    transition={{
+                                        duration: 2,
+                                        repeat: Infinity,
+                                        ease: "linear"
+                                    }}
+                                />
                             </div>
 
-                            <div className="absolute bottom-6 left-6">
-                                <h3 className="text-2xl font-bold font-heading uppercase">{release.title}</h3>
+                            {/* Title */}
+                            <div className="absolute bottom-6 left-6 right-6 z-10">
+                                <h3 className="text-2xl md:text-3xl font-black font-heading uppercase tracking-tight leading-none drop-shadow-2xl text-white">
+                                    {release.title}
+                                </h3>
                             </div>
+
+
                         </motion.article>
                     ))}
                 </motion.div >

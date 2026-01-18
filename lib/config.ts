@@ -38,7 +38,7 @@ export const RELEASES = {
     latest: {
         title: "Tech House Set 1",
         label: "Jetzt Verfügbar",
-        image: "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=1000",
+        image: "/tech-house-set-1-cover.svg",
         soundcloudUrl: "https://soundcloud.com/manualduckbass-267698168/manual-duckbass-tech-house-set-1",
     },
     upcoming: [

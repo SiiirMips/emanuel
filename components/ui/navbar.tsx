@@ -16,10 +16,9 @@ export function Navbar() {
                 {/* Logo */}
                 <Link href="/" className="relative w-12 h-12 md:w-16 md:h-16 z-50 pointer-events-auto">
                     <img
-                        src="/logo_svg.svg"
+                        src="/logo_md.png"
                         alt="Manual Duckbass"
                         className="w-full h-full object-contain"
-                        style={{ filter: 'brightness(0) invert(1)' }}
                     />
                 </Link>
                 {/* Hamburger Trigger */}

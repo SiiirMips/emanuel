@@ -2,8 +2,21 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+
+const DJ_IMAGES = ["/dj_1.png", "/dj_2.jpg", "/dj_3.jpg"];
 
 export function About() {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % DJ_IMAGES.length);
+        }, 5000); // Change image every 5 seconds
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <section id="about" className="relative min-h-screen py-24 bg-black text-white overflow-hidden">
             <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-12">
@@ -18,10 +31,23 @@ export function About() {
                 >
                     <div className="absolute inset-0 border border-white/10 translate-x-4 translate-y-4 z-0" />
                     <div className="absolute inset-0 bg-neutral-800 z-10 overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                        {/* Placeholder for DJ Photo */}
-                        <div className="w-full h-full bg-neutral-900 flex items-center justify-center text-white/20 font-heading text-4xl">
-                            DJ IMAGE
-                        </div>
+                        {DJ_IMAGES.map((src, index) => (
+                            <motion.div
+                                key={src}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
+                                transition={{ duration: 1 }}
+                                className="absolute inset-0"
+                            >
+                                <Image
+                                    src={src}
+                                    alt={`DJ Manual Duckbass ${index + 1}`}
+                                    fill
+                                    className="object-cover"
+                                    priority={index === 0}
+                                />
+                            </motion.div>
+                        ))}
                     </div>
                 </motion.div>
 
@@ -38,13 +64,7 @@ export function About() {
                     </h2>
 
                     <p className="text-lg md:text-xl text-neutral-400 leading-relaxed">
-                        Manual Duckbass isn't just playing tracks; he's orchestrating energy.
-                        From underground raves to digital soundscapes, his style blends
-                        raw techno geometry with melodic fluidity.
-                    </p>
-
-                    <p className="text-lg md:text-xl text-neutral-400 leading-relaxed">
-                        "I want the audience to feel the rotation of the earth when the bass drops."
+                        Ich bin Manual Duckbass. Seit 4 Jahren bringe ich mit House, Tech House und Techno energiegeladene Vibes an die Decks, gespickt mit kreativen Mashups und immer abgestimmt auf die Energie der Tanzfläche. Buchbar für Events, Clubs und Veranstaltungen.
                     </p>
 
                     <div className="pt-4">
