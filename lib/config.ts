@@ -5,7 +5,7 @@
 
 export const SITE_CONFIG = {
     name: "Manual Duckbass",
-    title: "Manual Duckbass | Tech House DJ & Producer",
+    title: "Manual Duckbass | Tech House DJ",
     description: "Offizieller Webauftritt von DJ Manual Duckbass. Tech House neu definiert. Treibe den Beat. Fühle die Nacht.",
     url: "https://manuelduckbass.com",
     locale: "de_DE",
