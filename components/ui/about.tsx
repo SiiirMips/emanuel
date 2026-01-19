@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-const DJ_IMAGES = ["/dj_1.png", "/dj_2.jpg", "/dj_3.jpg"];
+const DJ_IMAGES = ["/dj_1.png", "/dj_2.jpg", "/dj_3.jpg", "/dj_4.jpg"];
 
 export function About() {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
