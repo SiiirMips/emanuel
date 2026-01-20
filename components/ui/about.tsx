@@ -66,12 +66,6 @@ export function About() {
                     <p className="text-lg md:text-xl text-neutral-400 leading-relaxed">
                         Ich bin Manual Duckbass. Seit 4 Jahren bringe ich mit House, Tech House und Techno energiegeladene Vibes an die Decks, gespickt mit kreativen Mashups und immer abgestimmt auf die Energie der Tanzfläche. Buchbar für Events, Clubs und Veranstaltungen.
                     </p>
-
-                    <div className="pt-4">
-                        <button className="px-8 py-3 border border-white text-white uppercase tracking-widest hover:bg-white hover:text-black transition-colors duration-300">
-                            Read Full Bio
-                        </button>
-                    </div>
                 </motion.div>
 
             </div>
