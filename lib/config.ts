@@ -36,21 +36,25 @@ export const SOCIAL_LINKS = {
 
 export const RELEASES = {
     latest: {
-        title: "Tech House Set 1",
+        title: "Techno House & Techno Set #2",
         label: "Jetzt Verfügbar",
-        image: "/tech-house-set-1-cover.svg",
-        soundcloudUrl: "https://soundcloud.com/manualduckbass-267698168/manual-duckbass-tech-house-set-1",
+        image: "/tech-house-set-2-cover.svg",
+        soundcloudUrl: "https://soundcloud.com/manualduckbass-267698168/tech-house-techno",
     },
     upcoming: [
         {
-            title: "Coming Soon",
-            label: "Demnächst",
-            image: "https://images.unsplash.com/photo-1594623930572-300a3011d9ae?q=80&w=1000",
+            title: "Tech House Set 1",
+            label: "Veröffentlicht",
+            image: "/tech-house-set-1-cover.svg",
+            soundcloudUrl: "https://soundcloud.com/manualduckbass-267698168/manual-duckbass-tech-house-set-1",
+            published: true
         },
         {
             title: "Coming Soon",
             label: "Demnächst",
             image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000",
+            soundcloudUrl: "",
+            published: false
         }
     ]
 } as const;
