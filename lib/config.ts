@@ -36,10 +36,10 @@ export const SOCIAL_LINKS = {
 
 export const RELEASES = {
     latest: {
-        title: "Techno House & Techno Set #2",
+        title: "Tech House Set #2",
         label: "Jetzt Verfügbar",
         image: "/tech-house-set-2-cover.svg",
-        soundcloudUrl: "https://soundcloud.com/manualduckbass-267698168/tech-house-techno",
+        soundcloudUrl: "https://soundcloud.com/manualduckbass-267698168/tech-house-set-2",
     },
     upcoming: [
         {
